@@ -22,9 +22,9 @@ $students_result = $university_connection->query("SELECT * FROM students ORDER B
 <body>
     <div class="box">
         <h1>Welcome <span><?= $_SESSION['name']; ?></span></h1>
-        <p>This is an <span>admin</span> page</p>
+        <p>This is <span>admin</span> page</p>
         <hr>
-        <div class="box">
+        <div class="container">
             <h1>Student</h1>
             <table>
                 <thead>
@@ -61,7 +61,6 @@ $students_result = $university_connection->query("SELECT * FROM students ORDER B
         <div class="box">
             <h1>Adding new data</h1>
             <form action="admin_actions.php" method="post">
-                <button type="submit" name="create_student">Add Student</button>
                 <input type="text" name="student_id" placeholder="Student ID (e.g., S2021999)" required>
                 <input type="text" name="name" placeholder="Full Name" required>
                 <select name="gender">
@@ -72,10 +71,11 @@ $students_result = $university_connection->query("SELECT * FROM students ORDER B
                 <input type="text" name="faculty" placeholder="Faculty" required>
                 <input type="text" name="major" placeholder="Major" required>
                 <input type="number" name="year_enrolled" placeholder="Year Enrolled (e.g., 2024)" required>
+                <button type="submit" name="create_student">Add Student</button>
             </form>
         </div>
         <hr>
-        <button onclick="window.location.href='logout.php'">Logout</button>
+        <button onclick="window.location.href='logout.php'" class="logout">Logout</button>
     </div>
     </div>
     

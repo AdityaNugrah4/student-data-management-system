@@ -25,10 +25,11 @@ if (!$student) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit student information</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="box">
-    <h1>Edit Student: <?= $student['name'] ?></h1>
-    <form action="admin_actions.php" method="post">
+<body class="box student-edit-form">
+    <h1>Edit Student Information: <?= $student['name'] ?></h1>
+    <form class="student-edit-form" action="admin_actions.php" method="post">
         <input type="hidden" name="id" value="<?= $student['id'] ?>">
 
         <label>Student ID:</label>
@@ -53,7 +54,7 @@ if (!$student) {
         <input type="number" name="year_enrolled" value="<?= htmlspecialchars($student['year_enrolled']) ?>" required>
 
         <button type="submit" name="update_student">Update Student</button>
-        <a href="admin_page.php">Cancel</a>
+        <button onclick="window.location.href='admin_page.php'" class="logout">Cancel</button>
     </form>
 </body>
 </html>

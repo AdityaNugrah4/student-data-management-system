@@ -55,9 +55,9 @@ if (isset($_GET['search']) && !empty(trim($_GET['search']))) {
         <div class="box">
             <h1>Find student</h1>
             <form action="user_page.php" method="GET">
-                <input type="text" name="search" placeholder="Search by ID, name, faculty, or major" value="<?= htmlspecialchars($search_term); ?>" class="search-bar">
                 <button type="submit">Search</button>
-                <a href="user_page.php">Clear</a>
+                <input type="text" name="search" placeholder="Search by ID, name, faculty, or major" value="<?= htmlspecialchars($search_term); ?>" class="search-bar">
+                <button type="button" onclick="window.location.href='user_page.php'">Clear search</button> 
             </form>
             <h1>Student</h1>
             <table>
@@ -69,7 +69,6 @@ if (isset($_GET['search']) && !empty(trim($_GET['search']))) {
                         <th>Faculty</th>
                         <th>Major</th>
                         <th>Year</th>
-                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -88,7 +87,7 @@ if (isset($_GET['search']) && !empty(trim($_GET['search']))) {
             <hr>
             <!-- This should be the table to display the information from SQL that contain student information -->
         </div>
-        <button onclick="window.location.href='logout.php'">Logout</button>
+        <button onclick="window.location.href='logout.php'" class="logout">Logout</button>
     </div>
 </body>
 </html>

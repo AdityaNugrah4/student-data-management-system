@@ -25,13 +25,14 @@ function isActiveForm($formName, $activeForm) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login Page</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div>
         <div class="container">
+            <h1>Welcome to Banana University Student Data Management System</h1>
             <div class="form-box <?= isActiveForm('login', $activeForm); ?>" id="login-form">
                 <form action="login_register.php" method="post">
                     <h2>Login</h2>
